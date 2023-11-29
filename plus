@@ -7,8 +7,11 @@ import sys
 ans = 0.0
 for line in sys.stdin:
     try:
-        ans += int(line)
+        if  int(line) % 2 == 0:
+            ans += int(line)
+        else: ans -= int(line)
     except:
-        ans += float(line)
-
+        if  float(line) % 2 == 0:
+            ans += float(line)
+        else: ans -= float(line)
 print(ans)
