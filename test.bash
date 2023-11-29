@@ -1,4 +1,4 @@
-#!/bin/bash -xv
+#!/bin/bash 
 # SPDX-FileCopyrightText:2023 Yuto Okuda
 # SPDX-License-Identifier: BSD-3-Clause
 
@@ -10,12 +10,12 @@ ng () {
 res=0
 
 ### I/o TEST ###
-out=$(seq 2 '+' 3 | ./plus)
-[ "${out}" = 5 ] || ng ${LINENO}
+out=$(seq 5 | ./plus)
+[ "${out}" = 15 ] || ng ${LINENO}
 
 ### STRANGE INPUT ###
 out=$(echo あ | ./plus)
-[ "$?" = 1 ]	   || ng ${LINENO}
+[ "$?" = 1 ]      || ng ${LINENO}
 [ "${out}" = "" ]  || ng ${LINENO}
 
 out=$(echo | ./plus)
@@ -24,5 +24,3 @@ out=$(echo | ./plus)
 
 [ "$res" = 0 ] && echo OK       # &&(AND記号)は左側が成功すると右側を実行
 exit $res
-
-

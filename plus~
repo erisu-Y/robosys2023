@@ -2,97 +2,13 @@
 # SPDX-FileCopyrightText: ©2023　Yuto Okuda
 # SPDX-License-Identifier: BSD-3-Clause
 
-# 電卓の関数を定義する
-def calculator():
-  #数値　演算子　数値
+import sys
 
-  result = 0
-
-  while True:
-    user_input = input()
-
-    if user_input == "q":
-      break
-    #入力を空白分割
-    tokens = user_input.split()
-
-    if len(tokens) != 3:
-      continue
-
-    x = tokens[0]
-    operator = tokens[1]
-    y = tokens[2]
-
+ans = 0.0
+for line in sys.stdin:
     try:
-      x = float(x)
-      y = float(y)
-    except ValueError:
-      continue
+        ans += int(line)
+    except:
+        ans += float(line)
 
-    # 計算
-    if operator == "+":
-      result = x + y
-    elif operator == "-":
-      result = x - y
-    elif operator == "*":
-      result = x * y
-    elif operator == "/":
-      #計算不可処理 
-      if y == 0:
-        continue
-      result = x / y
-    else:
-      #例外処理 
-      continue
-
-    print(result)
-
-    answer = input()
-
-    if answer == "y":
-      while True:
-        print(result)
-
-        user_input = input()
-        tokens = user_input.split()
-        if len(tokens) != 2:
-          continue
-
-        operator = tokens[0]
-        y = tokens[1]
-        try:
-          y = float(y)
-        except ValueError:
-          continue
-        # 計算
-        if operator == "+":
-          result = result + y
-        elif operator == "-":
-          result = result - y
-        elif operator == "*":
-          result = result * y
-        elif operator == "/":
-        #計測不可処理 
-          if y == 0:
-            continue
-          result = result / y
-        else:
-          # 例外処理
-          continue
-        print(result)
-        answer = input()
-        if answer == "y":
-          continue
-        elif answer == "n":
-          break
-         #例外処理
-        else:
-          continue
-    elif answer == "n":
-      continue
-    #例外処理 
-    else:
-      continue
-
-# 電卓の関数呼び出し
-calculator()
+print(ans)
