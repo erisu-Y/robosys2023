@@ -1,7 +1,7 @@
 # robosys2023
 ロボ死す
 # plusコマンド
-[![test](https://github.com/erisu-Y/robosys2023/actions/workflows/test.yml/badge.svg)](https://github.com/erisu-Y/robosys2023/actions/workflows/test_plus.yml)
+[![test](https://github.com/erisu-Y/robosys2023/actions/workflows/test.yml/badge.svg)](https://github.com/erisu-Y/robosys2023/actions)
 
 標準入力から読み込んだ数字を偶数か奇数かを判別し、加減の計算を行う。偶数の場合は足し算、奇数の場合は引き算を行う。
 
