@@ -9,13 +9,15 @@ for line in sys.stdin:
     try:
         if int(line) < 0:
             continue
-        if  int(line) % 2 == 0:
-            ans += int(line)
-        else: ans -= int(line)
+        else:
+            if  int(line) % 2 == 0:
+                ans += int(line)
+            else: ans -= int(line)
     except:
         if int(line) < 0:
             continue
-        if  float(line) % 2 == 0:
-            ans += float(line)
-        else: ans -= float(line)
+        else:
+            if  float(line) % 2 == 0:
+                ans += float(line)
+            else: ans -= float(line)
 print(ans)

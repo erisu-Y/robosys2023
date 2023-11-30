@@ -1,4 +1,4 @@
-#!/bin/bash -xv 
+#!/usr/bin/python3 
 # SPDX-FileCopyrightText:2023 Yuto Okuda
 # SPDX-License-Identifier: BSD-3-Clause
 
